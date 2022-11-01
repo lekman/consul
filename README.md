@@ -23,7 +23,7 @@ We will install the demo services and secure them using intentions. The followin
     minikube service list
 
     minikube service consul-ui --namespace consul
-    ```bash
+    ```
 1. Open a new Terminal window and use kubectl to check the Consul member instances
     ```bash
     kubectl exec --stdin --tty consul-server-0 --namespace consul -- /bin/sh
