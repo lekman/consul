@@ -8,12 +8,12 @@ The following steps were taken to run Consul locally.
 
 1. [Install Minikube](https://github.com/kubernetes/minikube/releases/latest/download/minikube-installer.exe)
 1. Start Minikube
-   ```
+   ```bash
    minikube start --memory 4096
    ```
 1. Create [Heml values file](./deploy/helm-consul-values.yaml)
 1. Install Consul in K8s
-    ```
+    ```bash
     helm repo add hashicorp https://helm.releases.hashicorp.com
     
     cd ./deploy
