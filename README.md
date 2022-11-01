@@ -11,7 +11,7 @@ We will install the demo services and secure them using intentions. The followin
    ```bash
    minikube start --memory 4096
    ```
-1. Create [Heml values file](./deploy/helm-consul-values.yaml)
+1. Create [Helm values file](./deploy/helm-consul-values.yaml)
 1. Install Consul in K8s
     ```bash
     helm repo add hashicorp https://helm.releases.hashicorp.com
