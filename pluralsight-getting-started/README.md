@@ -96,8 +96,12 @@ Now, returns auto completion on all partial commands:
 
 ## Test Lab: Deploy services
 
-Create [shipments](../deploy/shipments.yaml) and [orders](../deploy/orders.yaml) files and deploy with kubectl.
+Note that the images do not work on arm64.
+
+Create [services](./services.yaml) files and deploy with kubectl.
 
 ```bash
 kubectl apply -f services.yaml
 ```
+
+Open [127.0.0.1:3000](http://127.0.0.1:3000)

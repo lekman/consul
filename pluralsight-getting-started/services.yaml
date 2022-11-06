@@ -6,8 +6,8 @@ spec:
   selector:
     app: orders
   ports:
-  - port: 9004
-    targetPort: 9004
+  - port: 3000
+    targetPort: 3000
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -31,10 +31,46 @@ spec:
       - name: orders
         image: weshigbee/consul2-orders
         ports:  
-        - containerPort: 9004
+        - containerPort: 3000
         env:
         - name: SHIPMENTS_URL
-          value: 'http://shipments:9003'
+          value: 'http://shipments:5000'
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mails
+spec:
+  selector:
+    app: mails
+  ports:
+  - port: 8025
+    targetPort: 8025
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mails
+  name: mails
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mails
+  template:
+    metadata:
+      annotations:
+        'consul.hashicorp.com/connect-inject': 'true'
+      labels:
+        app: mails
+    spec:
+      containers:
+      - name: mails
+        image: mailhog/mailhog
+        ports:  
+        - containerPort: 8025
 ---
 apiVersion: v1
 kind: Service
@@ -44,8 +80,8 @@ spec:
   selector:
     app: shipments
   ports:
-  - port: 9003
-    targetPort: 9003
+  - port: 5000
+    targetPort: 5000
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -69,7 +105,7 @@ spec:
       - name: shipments
         image: weshigbee/consul2-shipments
         ports:  
-        - containerPort: 9003
+        - containerPort: 5000
 ---
 apiVersion: consul.hashicorp.com/v1alpha1
 kind: ServiceIntentions
