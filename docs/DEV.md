@@ -36,6 +36,9 @@ We will install the demo services and secure them using intentions. The followin
     exit
     ```
 
+<img src="./install-start-consul-minikube.png" width="600">
+<img src="./consul-minikube.png" width="600">
+
 ## Testing Service Intentions
 
 Followed [tutorial](https://developer.hashicorp.com/consul/tutorials/kubernetes/kubernetes-minikube) and created and tested intentions with services.
@@ -62,6 +65,8 @@ Followed [tutorial](https://developer.hashicorp.com/consul/tutorials/kubernetes/
     kubectl delete -f deny.yaml
     ```
 1. Note that change is applied and connection works
+
+<img src="./consul-minikube-counter.png" width="600">
 
 ## Testing Zero Trust
 
