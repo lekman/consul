@@ -82,7 +82,7 @@ Then fetch using:
 dig @127.0.0.1 -p 8600 shipments.service.consul -t SRV
 ```
 
-### CLI Autocomplete
+## CLI Autocomplete
 
 Install using
 
@@ -93,3 +93,13 @@ consul -autocomplete-install
 Now, returns auto completion on all partial commands:
 
 <img src="autocomplete.png" size="600">
+
+## Test Lab: Deploy services
+
+Create [shipments](../deploy/shipments.yaml) and [orders](../deploy/orders.yaml) files and deploy with kubectl.
+
+```bash
+cd ./deploy
+kubectl apply -f shipments.yaml
+kubectl apply -f orders.yaml
+```
