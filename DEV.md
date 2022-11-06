@@ -4,7 +4,7 @@ We will install the demo services and secure them using intentions. The followin
 
 1. [Install Minikube](https://k8s-docs.netlify.app/en/docs/tasks/tools/install-minikube/)
     -Note for Mac arm64: install and start [Docker arm64](https://desktop.docker.com/mac/main/arm64/Docker.dmg?utm_source=docker&utm_medium=webreferral&utm_campaign=dd-smartbutton&utm_location=module) then
-    ```
+    ```bash
     brew install minikube
     minikube start --memory 4096 --vm-driver=docker
     ```
