@@ -81,3 +81,15 @@ Then fetch using:
 ```bash
 dig @127.0.0.1 -p 8600 shipments.service.consul -t SRV
 ```
+
+### CLI Autocomplete
+
+Install using
+
+```bash
+consul -autocomplete-install
+```
+
+Now, returns auto completion on all partial commands:
+
+<img src="autocomplete.png" size="600">
