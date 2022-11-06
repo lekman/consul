@@ -4,6 +4,6 @@ This repository is for research and learning purposes only.
 
 Contents:
 
-- [Development Workstation Setup using Minikube](./docs/DEV.md)
-- [Course: Getting Started with HashiCorp Consul](./docs/PLURAL_INTRO.md)
-- [Install Consul on AWS using Terraform](./docs/TERRAFORM-AWS.md)
+- [Development Workstation Setup using Minikube](./dev-minikube/README.md)
+- [Course: Getting Started with HashiCorp Consul](./pluralsight-getting-started/README.md)
+- [Install Consul on AWS using Terraform](./terraform-aws/README.md)

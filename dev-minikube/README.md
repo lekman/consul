@@ -13,17 +13,14 @@ We will install the demo services and secure them using intentions. The followin
    ```bash
    minikube start --memory 4096
    ```
-1. Create [Helm values file](./deploy/helm-consul-values.yaml)
+1. Create [Helm values file](./helm-consul-values.yaml)
 1. Install Consul in K8s
     ```bash
     helm repo add hashicorp https://helm.releases.hashicorp.com
     
-    cd ./deploy
-    
     helm install --values helm-consul-values.yaml consul hashicorp/consul --create-namespace --namespace consul --version "0.43.0"
     
     minikube service list
-
     minikube service consul-ui --namespace consul
     ```
 1. Open a new Terminal window and use kubectl to check the Consul member instances
@@ -44,7 +41,7 @@ We will install the demo services and secure them using intentions. The followin
 
 Followed [tutorial](https://developer.hashicorp.com/consul/tutorials/kubernetes/kubernetes-minikube) and created and tested intentions with services.
 
-1. Create two sample Helm service deployments, [counting.yaml](./deploy/counting.yaml) and [dashboard.yaml](./deploy/dashboard.yaml)
+1. Create two sample Helm service deployments, [counting.yaml](./counting.yaml) and [dashboard.yaml](./dashboard.yaml)
 1. Deploy services
     ```bash
     kubectl apply -f counting.yaml
@@ -79,7 +76,7 @@ Followed [tutorial](https://developer.hashicorp.com/consul/tutorials/kubernetes/
 Expanded the tutorial and used [zero-trust configuration](https://developer.hashicorp.com/consul/tutorials/kubernetes-features/service-mesh-zero-trust-network) instead.
 
 1. Deleted all manually created intentions
-1. Created [deny-all.yaml](./deploy/deny-all.yaml) and [service-to-service.yaml](./deploy/service-to-service.yaml)
+1. Created [deny-all.yaml](./deny-all.yaml) and [service-to-service.yaml](./service-to-service.yaml)
 1. Block traffic
     ```bash
     kubectl apply -f deny-all.yaml

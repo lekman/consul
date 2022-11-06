@@ -99,7 +99,5 @@ Now, returns auto completion on all partial commands:
 Create [shipments](../deploy/shipments.yaml) and [orders](../deploy/orders.yaml) files and deploy with kubectl.
 
 ```bash
-cd ./deploy
-kubectl apply -f shipments.yaml
-kubectl apply -f orders.yaml
+kubectl apply -f services.yaml
 ```
