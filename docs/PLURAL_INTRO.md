@@ -29,7 +29,7 @@ We [previously installed a dev environment](./DEV.md) and the consul CLI needs t
 
 Get the IP address to use:
 
-```bash
+```
 $ minikube service consul-ui --namespace consul
 |-----------|-----------|-------------|---------------------------|
 | NAMESPACE |   NAME    | TARGET PORT |            URL            |
