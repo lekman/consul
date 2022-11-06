@@ -57,7 +57,7 @@ set CONSUL_HTTP_ADDR=http://127.0.0.1:51851
 ```
 
 Now the CLI works as expected:
-```
+```bash
 consul members
 Node             Address          Status  Type    Build   Protocol  DC   Partition  Segment
 consul-server-0  172.17.0.5:8301  alive   server  1.12.0  2         dc1  default    <all>
