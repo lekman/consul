@@ -36,6 +36,8 @@ We will install the demo services and secure them using intentions. The followin
     exit
     ```
 
+    
+## 
 <img src="./install-start-consul-minikube.png" width="600">
 <img src="./consul-minikube.png" width="600">
 
