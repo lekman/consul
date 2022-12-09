@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: lekmanresponderapi
+  labels:
+    app: weather-forecast
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      service: lekmanresponderapi
+  template:
+    metadata:
+      labels:
+        app: weather-forecast
+        service: lekmanresponderapi
+    spec:
+      containers:
+        - name: webapi
+          image: crlekmandv.azurecr.io/lekmanresponderapi:v1
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          env:
+            - name: ASPNETCORE_URLS
+              value: http://+:80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: lekmanresponderapi
+  labels:
+    app: weather-forecast
+    service: lekmanresponderapi
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 443
+      targetPort: 80
+      protocol: TCP
+  selector:
+    service: lekmanresponderapi

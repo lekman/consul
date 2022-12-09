@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32929.385
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lekman.ResponderApi", "Lekman.ResponderApi\Lekman.ResponderApi.csproj", "{2965951E-D54B-49CA-B1E6-A26286577073}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{26BAEB8B-2D24-4772-B78F-852111060634}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Deployment", "Deployment", "{E0DCD5E2-9A22-466D-9D03-2436EECFB622}"
+	ProjectSection(SolutionItems) = preProject
+		deploy-responderapi.yaml = deploy-responderapi.yaml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2965951E-D54B-49CA-B1E6-A26286577073}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2965951E-D54B-49CA-B1E6-A26286577073}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2965951E-D54B-49CA-B1E6-A26286577073}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2965951E-D54B-49CA-B1E6-A26286577073}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26BAEB8B-2D24-4772-B78F-852111060634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26BAEB8B-2D24-4772-B78F-852111060634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26BAEB8B-2D24-4772-B78F-852111060634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26BAEB8B-2D24-4772-B78F-852111060634}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E1DE6CA6-AC92-4E1A-ACBA-00EAE3727601}
+	EndGlobalSection
+EndGlobal
