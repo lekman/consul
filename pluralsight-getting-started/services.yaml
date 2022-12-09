@@ -22,8 +22,6 @@ spec:
       app: orders
   template:
     metadata:
-      annotations:
-        'consul.hashicorp.com/connect-inject': 'true'
       labels:
         app: orders
     spec:
@@ -61,8 +59,6 @@ spec:
       app: mails
   template:
     metadata:
-      annotations:
-        'consul.hashicorp.com/connect-inject': 'true'
       labels:
         app: mails
     spec:
@@ -96,8 +92,6 @@ spec:
       app: shipments
   template:
     metadata:
-      annotations:
-        'consul.hashicorp.com/connect-inject': 'true'
       labels:
         app: shipments
     spec:
@@ -114,6 +108,17 @@ metadata:
 spec:
   destination:
     name: shipments
+  sources:
+    - name: orders
+      action: allow
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: orders-to-mails
+spec:
+  destination:
+    name: mails
   sources:
     - name: orders
       action: allow

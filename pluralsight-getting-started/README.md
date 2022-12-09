@@ -98,10 +98,13 @@ Now, returns auto completion on all partial commands:
 
 Note that the images do not work on arm64.
 
-Create [services](./services.yaml) files and deploy with kubectl.
+1. Create [services](./services.yaml) files and deploy with kubectl.
 
-```bash
-kubectl apply -f services.yaml
-```
-
-Open [127.0.0.1:3000](http://127.0.0.1:3000)
+    ```bash
+    kubectl apply -f services.yaml
+    ```
+1. Forward ports:
+    ```bash
+    kubectl port-forward deploy/orders 3000:3000
+    ```
+1. Open [127.0.0.1:3000](http://127.0.0.1:3000)
