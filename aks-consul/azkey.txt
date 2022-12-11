@@ -1,0 +1,17 @@
+Generating public/private rsa key pair.
+Your identification has been saved in ./azakskey
+Your public key has been saved in ./azakskey.pub
+The key fingerprint is:
+SHA256:baNtnK5ttAjvNrqV7m4jz/4RMxYW5K2ZPyAgHanxivw azureuser@myserver
+The key's randomart image is:
++---[RSA 4096]----+
+|      .. .o      |
+|    .... . o     |
+|    .+o   + .    |
+|    .... o =     |
+| . . .  S &      |
+|  o . .  O.O     |
+|   .   o+o*.o    |
+|    E .+B+o. .   |
+|      o%X*+      |
++----[SHA256]-----+
