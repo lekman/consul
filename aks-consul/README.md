@@ -12,7 +12,21 @@ ssh-keygen \
     -N azakskeysecret
 ```
 
+Create target resource group.
+
+```bash
+az group create -l uksouth -n rg-lekman-cluster
+```
+
 Deploy AKS cluster using the [Bicep template](./aks.bicep).
+
+```bash
+az bicep upgrade
+az deployment group create \
+    --resource-group rg-lekman-cluster \
+    --template-file aks.bicep \
+    --parameters @aks.parameters.json
+```
 
 Deploy Consul using Helm by following the [instructions](https://developer.hashicorp.com/consul/tutorials/kubernetes/kubernetes-aks-azure).
 
@@ -55,4 +69,10 @@ Test deploying an application.
 cd ..
 kubectl apply -f hashicups/
     kubectl get pods --selector consul.hashicorp.com/connect-inject-status=injected
+```
+
+Tear down service.
+
+```bash
+az group delete --resource-group rg-lekman-cluster
 ```
