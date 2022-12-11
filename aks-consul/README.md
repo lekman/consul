@@ -15,7 +15,7 @@ ssh-keygen \
 Create target resource group.
 
 ```bash
-az group create -l uksouth -n rg-lekman-cluster
+az group create -l uksouth -n rg-lekman-k8s-uks
 ```
 
 Deploy AKS cluster using the [Bicep template](./aks.bicep).
@@ -36,7 +36,7 @@ az account list
 az account set \
     --subscription corp-partner-actionpack
 az aks get-credentials \
-    --resource-group rg-lekman-web \
+    --resource-group rg-lekman-k8s-uks \
     --name aks-lekman-dv-uks
 kubectl cluster-info
 helm repo add \
@@ -74,5 +74,5 @@ kubectl apply -f hashicups/
 Tear down service.
 
 ```bash
-az group delete --resource-group rg-lekman-cluster
+az group delete --resource-group rg-lekman-k8s-uks
 ```
