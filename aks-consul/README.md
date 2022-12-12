@@ -52,6 +52,7 @@ export CONSUL_HTTP_TOKEN=$(kubectl get --namespace consul secrets/consul-bootstr
 export CONSUL_HTTP_ADDR=https://$(kubectl get services/consul-ui --namespace consul -o jsonpath='{.status.loadBalancer.ingress[0].ip}')
 export CONSUL_HTTP_SSL_VERIFY=false
 consul members
+kubectl apply -f deny-all.yaml
 open $CONSUL_HTTP_ADDR
 ```
 
@@ -67,6 +68,15 @@ Test deploying an application.
 cd ..
 kubectl apply -f hashicups/
     kubectl get pods --selector consul.hashicorp.com/connect-inject-status=injected
+```
+
+Install certificate and deploy ingress
+
+```bash
+cd ./CertFolder
+kubectl create secret tls certificate --key lekman.key --cert lekman.pfx
+cd ./hashicups
+kubectl apply -f ingress.yaml
 ```
 
 Tear down service.

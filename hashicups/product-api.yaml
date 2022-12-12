@@ -34,7 +34,6 @@ data:
       "bind_address": ":9090",
       "metrics_address": ":9103"
     }
-
 ---
 # Web frontend
 
@@ -88,3 +87,15 @@ spec:
             - name: config
               mountPath: /config
               readOnly: true
+---
+apiVersion: consul.hashicorp.com/v1alpha1
+kind: ServiceIntentions
+metadata:
+  name: product-api-to-postgres
+spec:
+  destination:
+    name: postgres
+  sources:
+    - name: product-api
+      action: allow
+---
