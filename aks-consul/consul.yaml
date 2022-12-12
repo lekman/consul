@@ -17,9 +17,9 @@ global:
     bootstrapToken:
       secretName: bootstrap-token
       secretKey: token
-  gossipEncryption:
-    secretName: hcs
-    secretKey: gossipEncryptionKey
+  #gossipEncryption:
+  #  secretName: hcs
+  #  secretKey: gossipEncryptionKey
 # Configures values that configure the Consul server cluster.
 server:
   enabled: true
